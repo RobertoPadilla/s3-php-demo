@@ -49,13 +49,13 @@ class Home extends BaseController
                     'region'  => 'us-east-2',
                     'version' => 'latest',
                     'credentials' => [
-                        'key' => $this->aws->s3['access_key_id'],
-                        'secret' => $this->aws->s3['secret_access_key'],
+                        'key' => $this->aws->s3_security['access_key_id'],
+                        'secret' => $this->aws->s3_security['secret_access_key'],
                   ]
                 ]);
 
-                $bucket = "ivan-docs"; # Nombre del Bucket
-                $key = 'ftp/' . $imgName; # Nombre de la carpeta + Nombre del archivo
+                $bucket = $this->aws->s3_bucket['name']; # Nombre del Bucket
+                $key = $this->aws->s3_bucket['ftp_path'] . $imgName; # Nombre de la carpeta + Nombre del archivo
                 $source = fopen($filepath, 'rb');
 
                 $uploader = new ObjectUploader( # Usando SDK para subir archivo

@@ -8,5 +8,7 @@
 # AWS
 #--------------------------------------------------------------------
 
-AWS.s3.access_key_id = 
-AWS.s3.secret_access_key = 
+# aws.s3_security.access_key_id = 
+# aws.s3_security.secret_access_key = 
+# aws.s3_bucket.name = ivan-docs
+# aws.s3_bucket.ftp_path = sisgia-test/
