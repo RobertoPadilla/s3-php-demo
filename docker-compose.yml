@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  php:
+    build: .
+    container_name: s3
+    ports:
+      - 80:80
+    volumes:
+      - ./app:/var/www/s3-php
